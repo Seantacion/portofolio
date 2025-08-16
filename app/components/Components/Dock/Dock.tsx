@@ -62,7 +62,7 @@ function DockItem({
   baseItemSize,
 }: DockItemProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isHovered = useMotionValue(0);
+  // const isHovered = useMotionValue(0);
 
   const mouseDistance = useTransform(mouseX, (val) => {
     const rect = ref.current?.getBoundingClientRect() ?? {
@@ -79,6 +79,8 @@ function DockItem({
   );
   const size = useSpring(targetSize, spring);
 
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.div
       ref={ref}
@@ -86,10 +88,10 @@ function DockItem({
         width: size,
         height: size,
       }}
-      onHoverStart={() => isHovered.set(1)}
-      onHoverEnd={() => isHovered.set(0)}
-      onFocus={() => isHovered.set(1)}
-      onBlur={() => isHovered.set(0)}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      onFocus={() => setIsHovered(true)}
+      onBlur={() => setIsHovered(false)}
       onClick={onClick}
       className={`relative inline-flex items-center justify-center rounded-full bg-[#060010] border-neutral-700 border-2 shadow-md ${className}`}
       tabIndex={0}
@@ -97,7 +99,7 @@ function DockItem({
       aria-haspopup="true"
     >
       {Children.map(children, (child) =>
-        cloneElement(child as React.ReactElement, { isHovered })
+        cloneElement(child as React.ReactElement<any>, { isHovered })
       )}
     </motion.div>
   );

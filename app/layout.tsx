@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter();
+const inter = Inter({
+  subsets: ['latin'], // wajib isi
+  preload: true,      // boleh default
+})
 
 export const metadata: Metadata = {
   title: "Sena Ramadhan Portfolio",

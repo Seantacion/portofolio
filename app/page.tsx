@@ -7,7 +7,6 @@ import AnimatedContent from "./components/Animations/AnimatedContent/AnimatedCon
 import ScrollReveal from "./components/TextAnimations/ScrollReveal/ScrollReveal";
 import { RefObject, useState } from "react";
 import { motion, useScroll, useSpring } from "motion/react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
 import FluidGlass from "./components/Components/FluidGlass/FluidGlass";
 import dynamic from "next/dynamic";
 import GooeyNav from "./components/Components/GooeyNav/GooeyNav";
@@ -22,7 +21,6 @@ import RotatingText from "./components/TextAnimations/RotatingText/RotatingText"
 // import { Badge } from "lucide-react";
 // import { Badge, Button } from "@material-tailwind/react";
 import Stack from "./components/Components/Stack/Stack";
-import { Button } from "@/components/ui/button";
 import { FaDartLang, FaFlutter, FaYoutube } from "react-icons/fa6";
 import { SiAlwaysdata, SiAxios, SiLeaflet, SiMantine, SiRedux, SiThemoviedatabase } from "react-icons/si";
 import { TbCloudDataConnection } from "react-icons/tb";
