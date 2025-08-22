@@ -4,7 +4,7 @@
 
 "use client";
 
-import React, { useRef, useEffect, ReactNode } from "react";
+import React, { useRef, useLayoutEffect, ReactNode } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -41,7 +41,7 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
 
@@ -49,13 +49,15 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
     const offset = reverse ? -distance : distance;
     const startPct = (1 - threshold) * 100;
 
+    // Set initial state
     gsap.set(el, {
       [axis]: offset,
       scale,
       opacity: animateOpacity ? initialOpacity : 1,
     });
 
-    gsap.to(el, {
+    // Buat animasi dengan ScrollTrigger
+    const tween = gsap.to(el, {
       [axis]: 0,
       scale: 1,
       opacity: 1,
@@ -71,9 +73,15 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
       },
     });
 
+    // Refresh untuk memastikan posisi benar setelah render
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 50);
+
+    // Cleanup hanya tween & trigger ini, bukan semua
     return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-      gsap.killTweensOf(el);
+      tween.scrollTrigger?.kill();
+      tween.kill();
     };
   }, [
     distance,

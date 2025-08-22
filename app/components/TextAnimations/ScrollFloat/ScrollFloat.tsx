@@ -2,7 +2,9 @@
 	Installed from https://reactbits.dev/ts/tailwind/
 */
 
-import React, { useEffect, useMemo, useRef, ReactNode, RefObject } from "react";
+"use client";
+
+import React, { useLayoutEffect, useMemo, useRef, ReactNode, RefObject } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -29,10 +31,11 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
   ease = "back.inOut(2)",
   scrollStart = "center bottom+=50%",
   scrollEnd = "bottom bottom-=40%",
-  stagger = 0.03
+  stagger = 0.03,
 }) => {
   const containerRef = useRef<HTMLHeadingElement>(null);
 
+  // Split text menjadi span
   const splitText = useMemo(() => {
     const text = typeof children === "string" ? children : "";
     return text.split("").map((char, index) => (
@@ -42,18 +45,18 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
     ));
   }, [children]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = containerRef.current;
     if (!el) return;
 
-    const scroller =
+    const scrollerEl =
       scrollContainerRef && scrollContainerRef.current
         ? scrollContainerRef.current
-        : window;
+        : null;
 
     const charElements = el.querySelectorAll(".inline-block");
 
-    gsap.fromTo(
+    const tween = gsap.fromTo(
       charElements,
       {
         willChange: "opacity, transform",
@@ -61,7 +64,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
         yPercent: 120,
         scaleY: 2.3,
         scaleX: 0.7,
-        transformOrigin: "50% 0%"
+        transformOrigin: "50% 0%",
       },
       {
         duration: animationDuration,
@@ -73,21 +76,24 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
         stagger: stagger,
         scrollTrigger: {
           trigger: el,
-          scroller,
+          scroller: scrollerEl || undefined, // hanya set kalau bukan window
           start: scrollStart,
           end: scrollEnd,
-          scrub: true
+          scrub: true,
         },
       }
     );
-  }, [
-    scrollContainerRef,
-    animationDuration,
-    ease,
-    scrollStart,
-    scrollEnd,
-    stagger
-  ]);
+
+    // Refresh posisi setelah render
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 50);
+
+    return () => {
+      tween.scrollTrigger?.kill();
+      tween.kill();
+    };
+  }, [scrollContainerRef, animationDuration, ease, scrollStart, scrollEnd, stagger]);
 
   return (
     <h2
