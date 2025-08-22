@@ -893,7 +893,7 @@ function Content() {
         {/* Social Links */}
         <div className="flex gap-6 text-3xl">
           <a
-            href="https://www.linkedin.com/in/username"
+            href="https://www.linkedin.com/in/sena-ramadhan"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-blue-400 transition"
@@ -901,7 +901,7 @@ function Content() {
             <FaLinkedin />
           </a>
           <a
-            href="https://wa.me/6281234567890"
+            href="https://wa.me/6281321796318"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-green-400 transition"
@@ -909,7 +909,7 @@ function Content() {
             <FaWhatsapp />
           </a>
           <a
-            href="https://www.instagram.com/username"
+            href="https://www.instagram.com/nzsr_"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-pink-400 transition"
