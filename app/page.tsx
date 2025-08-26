@@ -51,6 +51,8 @@ import { useMediaQuery } from "react-responsive";
 // import GlassSurface from "./components/Components/GlassSurface/GlassSurface";
 const GlassSurface = dynamic(() => import('./components/Components/GlassSurface/GlassSurface'), { ssr: false });
 
+const StackNoSSR = dynamic(() => import("./components/Components/Stack/Stack"), { ssr: false });
+
 export default function Home() {
   return (
     <>
@@ -253,7 +255,7 @@ function Content() {
                       <h2 className="text-5xl font-bold">Turelth</h2>
                       {/* <img src="" alt="" /> */}
                     </div>
-                    <p className="w-auto md:w-sm py-2 text-justify">
+                    <p className="w-auto md:w-md py-2">
                       {/* Turelth is a mobile application designed to track daily sensor data input and cleanliness updates from field operators. The data is sent directly to monitoring staff on the server, enabling them to verify input completion sensor, observe cleanliness progress, and detect any missed submissions in real time.  */}
                       Mobile app for monitoring daily sensor data input and cleanliness progress from field operators.
                     </p>
@@ -309,7 +311,7 @@ function Content() {
                       <h2 className="text-5xl font-bold">Jenos</h2>
                       {/* <img src="" alt="" /> */}
                     </div>
-                    <p className="w-auto md:w-sm py-2 text-justify">
+                    <p className="w-auto md:w-md py-2">
                       {/* Jenos is a mobile application for engineers to record attendance and input daily work activities. The data is sent to monitoring staff, who can view progress and performance through interactive job graphs, making it easier to track and analyze field operations.  */}
                       Mobile app for engineer attendance, work activity logging, and progress visualization through graphs.
                     </p>
@@ -365,7 +367,7 @@ function Content() {
                       <h2 className="text-4xl md:text-5xl font-bold">Movie Apps</h2>
                       {/* <img src="" alt="" /> */}
                     </div>
-                    <p className="w-auto md:w-sm py-2 text-justify">
+                    <p className="w-auto md:w-md py-2">
                       {/* Jenos is a mobile application for engineers to record attendance and input daily work activities. The data is sent to monitoring staff, who can view progress and performance through interactive job graphs, making it easier to track and analyze field operations.  */}
                       A mobile app for browsing movies, viewing details, and watching trailers using TMDb API.
                     </p>
@@ -420,7 +422,7 @@ function Content() {
                       <h2 className="text-3xl md:text-5xl font-bold">Smart Ring Apps</h2>
                       {/* <img src="" alt="" /> */}
                     </div>
-                    <p className="w-auto md:w-sm py-2 text-justify">
+                    <p className="w-auto md:w-md py-2">
                       {/* Jenos is a mobile application for engineers to record attendance and input daily work activities. The data is sent to monitoring staff, who can view progress and performance through interactive job graphs, making it easier to track and analyze field operations.  */}
                       A mobile application designed to connect with a smart ring device, displaying real-time heart rate sensor data in interactive graphics. The app will also include additional health and activity tracking features to enhance user wellness insights. Currently under active development.
                     </p>
@@ -469,13 +471,13 @@ function Content() {
               <SpotlightCard className="mx-5 md:mx-0"  spotlightColor="rgba(255, 174, 0, 0.2)">
                 <div className="container flex flex-col md:flex-row flex-col-reverse">
                   {/* result image */}
-                  <div className="flex-auto py-10 md:py-0">
-                    <Stack
+                  <div className="flex-auto py-10 md:py-5">
+                    <StackNoSSR
                       randomRotation={true}
                       sensitivity={180}
                       sendToBackOnClick={false}
                       cardsData={images4}
-                      cardDimensions={ isDesktop ? { width: 800, height: 350 } : { width: 270, height: 200 } }
+                      cardDimensions={ isDesktop ? { width: 800, height: 300 } : { width: 270, height: 200 } }
                     />
                   </div>
                   <div className="flex-auto md:pl-20">
@@ -535,13 +537,13 @@ function Content() {
               <SpotlightCard className="mx-5 md:mx-0"  spotlightColor="rgba(255, 174, 0, 0.2)">
                 <div className="container flex flex-col md:flex-row flex-col-reverse">
                   {/* result image */}
-                  <div className="flex-auto py-10 md:py-0">
-                    <Stack
+                  <div className="flex-auto py-10 md:py-5">
+                    <StackNoSSR
                       randomRotation={true}
                       sensitivity={180}
                       sendToBackOnClick={false}
                       cardsData={images6}
-                      cardDimensions={isDesktop ? { width: 800, height: 350 } : { width: 270, height: 200 } }
+                      cardDimensions={isDesktop ? { width: 800, height: 300 } : { width: 270, height: 200 } }
                     />
                   </div>
                   <div className="flex-auto md:pl-20">

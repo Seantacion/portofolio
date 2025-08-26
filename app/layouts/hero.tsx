@@ -10,7 +10,6 @@ import AnimatedContent from "../components/Animations/AnimatedContent/AnimatedCo
 import { useMediaQuery } from "react-responsive";
 
 export default function HeroPage() {
-const isDesktop = useMediaQuery({ minWidth: 768 });
   return (
     <div className="h-screen mx-auto w-full flex">
       {/* Background */}
