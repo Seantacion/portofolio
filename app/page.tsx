@@ -43,6 +43,11 @@ import LogoLoop from "./components/Animations/LogoLoop/LogoLoop";
 import { poppins } from "./fonts";
 import LiquidChrome from "./components/Backgrounds/LiquidChrome/LiquidChrome";
 import Particles from "./components/Backgrounds/Particles/Particles";
+import TextType from "./components/TextAnimations/TextType/TextType";
+import ShinyText from "./components/TextAnimations/ShinyText/ShinyText";
+import HeroPage from "./layouts/hero";
+import AboutPage from "./layouts/about";
+import { useMediaQuery } from "react-responsive";
 // import GlassSurface from "./components/Components/GlassSurface/GlassSurface";
 const GlassSurface = dynamic(() => import('./components/Components/GlassSurface/GlassSurface'), { ssr: false });
 
@@ -70,6 +75,8 @@ function Content() {
   };
 
   const [hovered, IsHovered] = useState(false);
+
+  const isDesktop = useMediaQuery({ minWidth: 768 });
 
   // const items = [
   //   { label: "Home", href: "#" },
@@ -192,23 +199,6 @@ function Content() {
     { id: 12, img: "/2-compro.png" },
     { id: 13, img: "/1-compro.png" },
   ];
-
-  const experiences: Experience[] = [
-    {
-      date: 'Oct 2023 - Present',
-      role: 'Flutter Developer',
-      company: 'PT Hydant Inovasi Semesta',
-      description: 'Build application Jenos\nBuild Content Management System for Company Profile PT Hydant Inovasi Semesta',
-      skills: ['Flutter'],
-    },
-    {
-      date: 'Sep 2022 - May 2025',
-      role: 'Frontend Developer',
-      company: 'PT Tristar Suryaya Gemilang',
-      description: 'Rebuild Loan Management System Bank BJB KPR\nBuild Sistem Informasi Satuan Polisi Pamong Praja DKI Jakarta (SISAPPRA)',
-      skills: ['HTML', 'CSS', 'JavaScript'],
-    },
-  ];
   
   return (
     <>
@@ -224,129 +214,8 @@ function Content() {
         </FadeContent>
       </div>
       {/* Home */}
-      <div className="h-screen mx-auto w-full flex">
-        {/* Background */}
-        <div className="absolute inset-0 z-0">
-          <DarkVeil hueShift={212}/>
-        </div>
-          {/* Content */}
-        <div className="relative container flex flex-row items-center justify-between w-full mx-auto">
-          {/* Introductions */}
-          <div className="relative z-10 flex flex-col items-start justify-center h-full">
-            <SplitText
-              text="Hallo👋🏽"
-              className="text-4xl py-1 text-white text-center"
-            />
-            <div>
-              <SplitText
-                text="I'm "
-                className="text-7xl font-bold text-white text-center"
-              />
-              <span> </span>
-              <SplitText
-                text="Sena Ramadhan"
-                className="mx-2 text-7xl font-bold text-orange-400 text-center"
-              />
-            </div>
-            <div className="flex flex-row gap-4">
-              <SplitText
-                text="a "
-                className="text-7xl font-bold text-white text-center"
-              />
-              <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
-                  <RotatingText
-                    texts={['Frontend Developer', 'Mobile Developer']}
-                    mainClassName="text-7xl font-bold text-white text-center"
-                    staggerFrom={"last"}
-                    initial={{ y: "100%" }}
-                    animate={{ y: 0 }}
-                    exit={{ y: "-120%" }}
-                    staggerDuration={0.025}
-                    splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                    rotationInterval={2000}
-                  />
-              </FadeContent>
-            </div>
-            <div className="max-w-2xl">
-              <SplitText
-                text="dedicated to building intuitive interfaces & eager to learn new technologies for growth."
-                className="py-2 text-3xl text-white/90 text-center font-light"
-                textAlign="justify"
-                delay={20}
-              />
-            </div>
-            <div className=" w-full mt-4">
-              {/* <Button className="bg-orange-400 px-5 py-5 text-lg text-white hover:bg-orange-500">
-                🚀 Explore My Works
-              </Button> */}
-              {/* <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
-                  <StarBorder
-                    color="orange"
-                    speed="5s"
-                  >
-                    🚀 Explore My Works
-                  </StarBorder>
-              </FadeContent> */}
-              <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
-                <a
-                  href="#projects"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const target = document.getElementById("projects");
-                    target?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="relative px-6 py-3 rounded-lg font-semibold text-white bg-black overflow-hidden group shadow-lg"
-                >
-                  <span className="relative z-10">🚀 Explore My Works</span>
-                  <span className="absolute inset-0 rounded-lg p-[2px] bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-500 animate-borderShine" />
-                </a>
-              </FadeContent>
-            </div>
-          </div>
-
-          {/* Img */}
-          <AnimatedContent
-            distance={150}
-            direction="vertical"
-            reverse={false}
-            duration={0.8}
-            ease="power3.out"
-            initialOpacity={0.2}
-            animateOpacity
-            scale={1.1}
-            threshold={0.1}
-            delay={0.3}
-          >
-            <div className="relative z-0 w-112 h-112 rounded-full flex items-center justify-center">
-            <div className="relative z-0 w-90 h-90 rounded-full bg-white flex items-center justify-center">
-            </div>
-              <div className="absolute inset-0 overflow-hidden rounded-full my-[-40] w-90 h-full m-auto">
-                <Image
-                  src="/sena-crop.png"
-                  alt="Profile Picture"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-            </div>
-            {/* <TiltedCard 
-              imageSrc={"/sena-white.png"}
-              containerHeight="500px"
-              imageHeight="500px"
-              imageWidth="500px" 
-            /> */}
-          </AnimatedContent>
-          {/* <ProfileCard
-            name="Sena Ramadhan"
-            title="Frontend Developer"
-            handle="nzsr_"
-            innerGradient="linear-gradient(145deg, #FF7A188c 0%, #FFB34744 100%);"
-            avatarUrl={"/sena-crop.png"}
-            showUserInfo={false}
-          /> */}
-        </div>
-      </div>
+      <HeroPage />
+      
       {/* Scroll Indicator */}
       <motion.div
         id="scroll-indicator"
@@ -364,58 +233,7 @@ function Content() {
       />
 
       {/* About */}
-      <div className="relative flex flex-col w-full h-screen overflow-hidden" id="about">
-        {/* Background */}
-        <div className="absolute inset-0 -z-10">
-          <Particles
-            particleColors={['#ffffff', '#ffffff']}
-            particleCount={200}
-            particleSpread={10}
-            speed={0.1}
-            particleBaseSize={100}
-            moveParticlesOnHover={true}
-            alphaParticles={false}
-            disableRotation={false}
-          />
-        </div>
-        {/* Konten di atas background */}
-        <div className="container mx-auto relative z-10">
-          <p className="text-5xl/15 font-extralight py-20 px-50 tracking-wide text-white">
-            For me, development is a continuous journey of learning by doing. 
-            I thrive on solving problems, experimenting with ideas, and 
-            transforming challenges into meaningful digital solutions.
-          </p>
-          <hr className="border-gray-600 mx-30" />
-          <div className="flex px-50 py-10">
-            <div className="flex-1 flex-row">
-              <h1 className="font-medium text-5xl ">Hi, I'm Sena.</h1>
-              <div className="flex flex-col pt-50 gap-5">
-                <div className="flex flex-col">
-                  <h1 className="text-5xl font-bold text-orange-400">2+</h1>
-                  <h5>Years of Experience</h5>
-                </div>
-                <div className="flex flex-col">
-                  <h1 className="text-5xl font-bold text-orange-400">6+</h1>
-                  <h5>Completed Projects</h5>
-                </div>
-              </div>
-            </div>
-            <div className="flex-1 text-gray-400">
-              <p className="pb-5">
-              I'm a frontend developer who loves turning ideas into real digital experiences. On the web, I enjoy building interfaces that are clean, responsive, and easy to use, while on mobile I use Flutter to create apps that feel smooth and work seamlessly across devices.
-              </p>
-              <p className="pb-5">
-              I believe the best way to grow is by learning through doing—solving problems, experimenting with new ideas, and constantly improving with every project. For me, coding isn’t just about writing functions, it’s about creating something meaningful that people can actually enjoy and benefit from.
-              </p>
-              <a href="/" onClick={handleOpenPdf} target="_blank" className="inline-flex justify-between items-center gap-2 bg-gradient-to-r from-orange-500/10 via-orange-400/10 to-orange-500/10 from-orange-600 via-orange-500 to-orange-600 py-2 px-4 rounded-lg text-white transition-all duration-300 transform hover:scale-105 font-bold">
-                  <BiSolidFilePdf />
-                  See my CV
-                  <BiSolidRightArrowAlt />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <AboutPage />
 
       {/* Projects */}
       <div className="flex w-full" id="projects">
@@ -427,12 +245,12 @@ function Content() {
           </div>
           {/* </h1> */}  
           <FadeAnimation>
-            <div className="grid grid-cols-2 gap-4">
-              <SpotlightCard className="custom-spotlight-card"  spotlightColor="rgba(255, 174, 0, 0.2)">
-                <div className="container flex flex-row">
+            <div className="grid grid-cols gap-4 md:grid-cols-2 ">
+              <SpotlightCard className="mx-5 md:mx-0"  spotlightColor="rgba(255, 174, 0, 0.2)">
+                <div className="container flex flex-col md:flex-row">
                   <div className="">
                     <div className="flex gap-2">
-                      <h2 className="text-5xl font-bold ">Turelth</h2>
+                      <h2 className="text-5xl font-bold">Turelth</h2>
                       {/* <img src="" alt="" /> */}
                     </div>
                     <p className="w-sm py-2 text-justify">
@@ -473,7 +291,7 @@ function Content() {
                     </div>
                   </div>
                   {/* result image */}
-                  <div className="flex">
+                  <div className="flex items-center justify-center">
                     <Stack
                       randomRotation={true}
                       sensitivity={180}
@@ -483,8 +301,8 @@ function Content() {
                   </div>
                 </div>
               </SpotlightCard>
-              <SpotlightCard className="custom-spotlight-card"  spotlightColor="rgba(255, 174, 0, 0.2)">
-                <div className="container flex flex-row">
+              <SpotlightCard className="mx-5 md:mx-0"  spotlightColor="rgba(255, 174, 0, 0.2)">
+                <div className="container flex flex-col md:flex-row">
                   <div className="">
                     <div>
                       <h2 className="text-5xl font-bold">Jenos</h2>
@@ -528,7 +346,7 @@ function Content() {
                     </div>
                   </div>
                   {/* result image */}
-                  <div className="flex">
+                  <div className="flex items-center justify-center">
                     <Stack
                       randomRotation={true}
                       sensitivity={180}
@@ -538,8 +356,8 @@ function Content() {
                   </div>
                 </div>
               </SpotlightCard>
-              <SpotlightCard className="custom-spotlight-card"  spotlightColor="rgba(255, 174, 0, 0.2)">
-                <div className="container flex flex-row">
+              <SpotlightCard className="mx-5 md:mx-0"  spotlightColor="rgba(255, 174, 0, 0.2)">
+                <div className="container flex flex-col md:flex-row">
                   <div className="">
                     <div>
                       <h2 className="text-5xl font-bold">Movie Apps</h2>
@@ -582,7 +400,7 @@ function Content() {
                     </div>
                   </div>
                   {/* result image */}
-                  <div className="flex">
+                  <div className="flex items-center justify-center">
                     <Stack
                       randomRotation={true}
                       sensitivity={180}
@@ -592,11 +410,11 @@ function Content() {
                   </div>
                 </div>
               </SpotlightCard>
-              <SpotlightCard className="custom-spotlight-card"  spotlightColor="rgba(255, 174, 0, 0.2)">
-                <div className="container flex flex-row">
+              <SpotlightCard className="mx-5 md:mx-0"  spotlightColor="rgba(255, 174, 0, 0.2)">
+                <div className="container flex flex-col md:flex-row">
                   <div className="">
                     <div>
-                      <h2 className="text-5xl font-bold">Smart Ring Apps</h2>
+                      <h2 className="text-4xl md:text-5xl font-bold">Smart Ring Apps</h2>
                       {/* <img src="" alt="" /> */}
                     </div>
                     <p className="w-sm py-2 text-justify">
@@ -632,7 +450,7 @@ function Content() {
                     </div>
                   </div>
                   {/* result image */}
-                  <div className="flex">
+                  <div className="flex items-center justify-center">
                     <Stack
                       randomRotation={true}
                       sensitivity={180}
@@ -644,24 +462,24 @@ function Content() {
               </SpotlightCard>
             </div>
             <div className="grid gap-4 py-4">
-              <SpotlightCard className="custom-spotlight-card"  spotlightColor="rgba(255, 174, 0, 0.2)">
-                <div className="container flex flex-row">
+              <SpotlightCard className="mx-5 md:mx-0"  spotlightColor="rgba(255, 174, 0, 0.2)">
+                <div className="container flex flex-col md:flex-row flex-col-reverse">
                   {/* result image */}
-                  <div className="flex-auto">
+                  <div className="flex-auto py-10 md:py-0">
                     <Stack
                       randomRotation={true}
                       sensitivity={180}
                       sendToBackOnClick={false}
                       cardsData={images4}
-                      cardDimensions={{ width: 800, height: 350 }}
+                      cardDimensions={ isDesktop ? { width: 800, height: 350 } : { width: 400, height: 150 } }
                     />
                   </div>
-                  <div className="flex-auto pl-20">
+                  <div className="flex-auto md:pl-20">
                     <div className="flex">
                       <h2 className="text-5xl font-bold ">SISAPPRA</h2>
                       {/* <img src="" alt="" /> */}
                     </div>
-                    <p className="w-xl py-2 text-justify">
+                    <p className="md:w-xl py-2 text-justify">
                       {/* Turelth is a mobile application designed to track daily sensor data input and cleanliness updates from field operators. The data is sent directly to monitoring staff on the server, enabling them to verify input completion sensor, observe cleanliness progress, and detect any missed submissions in real time.  */}
                       A web-based information system for Satpol PP DKI Jakarta. Contributed to the personnel module with employee data management, maps, field officer login UI, reporting, data management, and master data modules, including responsive mobile design.
                     </p>
@@ -698,36 +516,36 @@ function Content() {
                         <RiFileExcel2Fill />
                         ExcelJS
                       </div>
-                      <a href="https://sisappra-satpolpp.jakarta.go.id/authentication/signin" target="_blank" className="col-span-4 inline-flex justify-between items-center gap-2 bg-gradient-to-r from-orange-500/10 via-orange-400/10 to-orange-500/10 hover:from-orange-600 hover:via-orange-500 hover:to-orange-600 py-2 px-4 rounded-lg text-white transition-all duration-300 transform hover:scale-105 font-bold">
+                      <a href="https://sisappra-satpolpp.jakarta.go.id/authentication/signin" target="_blank" className="col-span-2 md:col-span-4 inline-flex justify-between items-center gap-2 bg-gradient-to-r from-orange-500/10 via-orange-400/10 to-orange-500/10 hover:from-orange-600 hover:via-orange-500 hover:to-orange-600 py-2 px-4 rounded-lg text-white transition-all duration-300 transform hover:scale-105 font-bold">
                           <IoIosLink />
                           Check the websites
                           <BiSolidRightArrowAlt />
                       </a>
-                      <div className="col-span-4 flex-row text-md italic font-medium">
+                      <div className="col-span-2 md:col-span-4 flex-row text-md italic font-medium">
                         Contributed until <span className="not-italic font-semibold">(Des 2024)</span>
                       </div>
                     </div>
                   </div>
                 </div>
               </SpotlightCard>
-              <SpotlightCard className="custom-spotlight-card"  spotlightColor="rgba(255, 174, 0, 0.2)">
-                <div className="container flex flex-row">
+              <SpotlightCard className="mx-5 md:mx-0"  spotlightColor="rgba(255, 174, 0, 0.2)">
+                <div className="container flex flex-col md:flex-row flex-col-reverse">
                   {/* result image */}
-                  <div className="flex-auto">
+                  <div className="flex-auto py-10 md:py-0">
                     <Stack
                       randomRotation={true}
                       sensitivity={180}
                       sendToBackOnClick={false}
                       cardsData={images6}
-                      cardDimensions={{ width: 800, height: 350 }}
+                      cardDimensions={isDesktop ? { width: 800, height: 350 } : { width: 400, height: 150 } }
                     />
                   </div>
-                  <div className="flex-auto pl-20">
+                  <div className="flex-auto md:pl-20">
                     <div className="flex">
                       <h2 className="text-5xl font-bold ">Company Profile</h2>
                       {/* <img src="" alt="" /> */}
                     </div>
-                    <p className="w-xl py-2 text-justify">
+                    <p className="md:w-xl py-2 text-justify">
                       {/* Turelth is a mobile application designed to track daily sensor data input and cleanliness updates from field operators. The data is sent directly to monitoring staff on the server, enabling them to verify input completion sensor, observe cleanliness progress, and detect any missed submissions in real time.  */}
                       A web-based company profile content management system for PT. Hydant Inovasi Semesta. Contributed to the development of dynamic content modules, service management, gallery, client, and responsive mobile-friendly UI/UX design, enabling easy updates through an admin CMS panel.
                     </p>
@@ -775,6 +593,7 @@ function Content() {
       {/* Experience */}
       <div className="flex flex-col w-full h-screen" id="experience">
         <div className="container mx-auto">
+          {/* Title */}
           <div className="flex items-center gap-3 text-lg text-center text-medium p-4">
             <span className="inline-block animate-spin-slow text-4xl text-gray-400">✦</span>
             MY EXPERIENCE
@@ -782,10 +601,10 @@ function Content() {
           {/* <WorkExperience experiences={experiences} /> */}
           <div className="flex rounded-lg p-8">
             <div>
-              <h2 className="text-xl text-gray-400 py-3">Freelance</h2>
+              <h2 className="text-md md:text-xl text-gray-400 py-3">Freelance</h2>
               <RotatingText
                 texts={['Web Developer', 'UI/UX Design']}
-                mainClassName="text-6xl font-bold text-white text-center"
+                mainClassName="text-3xl md:text-6xl font-bold text-white text-center"
                 staggerFrom={"last"}
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
@@ -795,7 +614,7 @@ function Content() {
                 transition={{ type: "spring", damping: 30, stiffness: 400 }}
                 rotationInterval={5000}
               />
-              <div className="text-xl text-gray-400 py-3">Jul 2023 - Present</div>
+              <div className="text-md md:text-xl text-gray-400 py-3">Jul 2023 - Present</div>
               {/* <ul className="list-disc px-4">
                 <li>Rebuild Loan Management System Bank BJB KPR</li>
                 <li>Build Sistem Informasi Satuan Polisi Pamong Praja DKI Jakarta (SISAPPRA)</li>
@@ -805,10 +624,10 @@ function Content() {
           <hr className="border-gray-600 mx-8"/>
           <div className="flex rounded-lg p-8">
             <div>
-              <h2 className="text-xl text-gray-400 py-3">PT Hydant Inovasi Semesta</h2>
+              <h2 className="text-md md:text-xl text-gray-400 py-3">PT Hydant Inovasi Semesta</h2>
               <RotatingText
                 texts={['Frontend Developer', 'Flutter Developer']}
-                mainClassName="text-6xl font-bold text-white text-center"
+                mainClassName="text-3xl md:text-6xl font-bold text-white text-center"
                 staggerFrom={"last"}
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
@@ -818,7 +637,7 @@ function Content() {
                 transition={{ type: "spring", damping: 30, stiffness: 400 }}
                 rotationInterval={5000}
               />
-              <div className="text-xl text-gray-400 py-3">Oct 2023 - Present</div>
+              <div className="text-md md:text-xl text-gray-400 py-3">Oct 2023 - Present</div>
               {/* <ul className="list-disc px-4">
                 <li>Rebuild Loan Management System Bank BJB KPR</li>
                 <li>Build Sistem Informasi Satuan Polisi Pamong Praja DKI Jakarta (SISAPPRA)</li>
@@ -829,9 +648,9 @@ function Content() {
           <hr className="border-gray-600 mx-8"/>
           <div className="flex rounded-lg p-8">
             <div>
-              <h2 className="text-xl text-gray-400 py-3">PT Tristar Surya Gemilang</h2>
-              <h1 className="text-6xl font-bold">Frontend Developer</h1>
-              <div className="text-xl text-gray-400 py-3">Sep 2022 - May 2025</div>
+              <h2 className="text-md md:text-xl text-gray-400 py-3">PT Tristar Surya Gemilang</h2>
+              <h1 className="text-3xl md:text-6xl font-bold">Frontend Developer</h1>
+              <div className="text-md md:text-xl text-gray-400 py-3">Sep 2022 - May 2025</div>
               {/* <ul className="list-disc px-4">
                 <li>Rebuild Loan Management System Bank BJB KPR</li>
                 <li>Build Sistem Informasi Satuan Polisi Pamong Praja DKI Jakarta (SISAPPRA)</li>
@@ -871,22 +690,22 @@ function Content() {
             />
           </div> */}
         </div>
-        <div style={{ height: '200px', position: 'relative', overflow: 'hidden'}}>
+        <div style={{ height: '200px', position: 'relative'}}>
           <LogoLoop
             logos={techLogos}
             speed={120}
             direction="left"
-            logoHeight={48}
+            logoHeight={isDesktop ? 48 : 38}
             gap={40}
             pauseOnHover
             scaleOnHover
             fadeOut
-            ariaLabel="Technology partners"
+            ariaLabel="Tech"
           />
         </div>
       </div>
       {/* Footer */}
-      <footer className="w-full pb-40 bg-black text-white flex flex-col items-center gap-6">
+      <footer className="w-full pt-20 md:pt-10 pb-40 bg-black text-white flex flex-col items-center gap-6">
         {/* CTA */}
         <h2 className="text-lg text-center font-light">Let’s Connect!</h2>
 
