@@ -21,7 +21,7 @@ import RotatingText from "./components/TextAnimations/RotatingText/RotatingText"
 // import { Badge } from "lucide-react";
 // import { Badge, Button } from "@material-tailwind/react";
 import Stack from "./components/Components/Stack/Stack";
-import { FaCss3, FaDartLang, FaFlutter, FaHtml5, FaInstagram, FaLaravel, FaLinkedin, FaWhatsapp, FaYoutube } from "react-icons/fa6";
+import { FaCss3, FaDartLang, FaFigma, FaFlutter, FaHtml5, FaInstagram, FaLaravel, FaLinkedin, FaWhatsapp, FaYoutube } from "react-icons/fa6";
 import { SiAlwaysdata, SiAxios, SiBootstrap, SiCodeigniter, SiCss3, SiDart, SiFlutter, SiGithub, SiGitlab, SiHtml5, SiJavascript, SiLaravel, SiLeaflet, SiLinkedin, SiMantine, SiNextdotjs, SiNodedotjs, SiPostgresql, SiReact, SiRedux, SiTailwindcss, SiThemoviedatabase, SiTypescript } from "react-icons/si";
 import { TbCloudDataConnection } from "react-icons/tb";
 import { BiLogoAndroid, BiLogoPlayStore, BiLogoPostgresql, BiLogoTypescript, BiLogoVisualStudio, BiRightArrow, BiSolidFilePdf, BiSolidRightArrowAlt } from "react-icons/bi";
@@ -253,7 +253,7 @@ function Content() {
                       <h2 className="text-5xl font-bold">Turelth</h2>
                       {/* <img src="" alt="" /> */}
                     </div>
-                    <p className="w-sm py-2 text-justify">
+                    <p className="w-auto md:w-sm py-2 text-justify">
                       {/* Turelth is a mobile application designed to track daily sensor data input and cleanliness updates from field operators. The data is sent directly to monitoring staff on the server, enabling them to verify input completion sensor, observe cleanliness progress, and detect any missed submissions in real time.  */}
                       Mobile app for monitoring daily sensor data input and cleanliness progress from field operators.
                     </p>
@@ -291,12 +291,13 @@ function Content() {
                     </div>
                   </div>
                   {/* result image */}
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-center pt-6 md:pt-0">
                     <Stack
                       randomRotation={true}
                       sensitivity={180}
                       sendToBackOnClick={false}
                       cardsData={images}
+                      cardDimensions={isDesktop ? { width: 300, height: 300 } : { width: 200, height: 300 }}
                     />
                   </div>
                 </div>
@@ -308,7 +309,7 @@ function Content() {
                       <h2 className="text-5xl font-bold">Jenos</h2>
                       {/* <img src="" alt="" /> */}
                     </div>
-                    <p className="w-sm py-2 text-justify">
+                    <p className="w-auto md:w-sm py-2 text-justify">
                       {/* Jenos is a mobile application for engineers to record attendance and input daily work activities. The data is sent to monitoring staff, who can view progress and performance through interactive job graphs, making it easier to track and analyze field operations.  */}
                       Mobile app for engineer attendance, work activity logging, and progress visualization through graphs.
                     </p>
@@ -346,12 +347,13 @@ function Content() {
                     </div>
                   </div>
                   {/* result image */}
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-center pt-6 md:pt-0">
                     <Stack
                       randomRotation={true}
                       sensitivity={180}
                       sendToBackOnClick={false}
                       cardsData={images2}
+                      cardDimensions={isDesktop ? { width: 300, height: 300 } : { width: 200, height: 300 }}
                     />
                   </div>
                 </div>
@@ -360,10 +362,10 @@ function Content() {
                 <div className="container flex flex-col md:flex-row">
                   <div className="">
                     <div>
-                      <h2 className="text-5xl font-bold">Movie Apps</h2>
+                      <h2 className="text-4xl md:text-5xl font-bold">Movie Apps</h2>
                       {/* <img src="" alt="" /> */}
                     </div>
-                    <p className="w-sm py-2 text-justify">
+                    <p className="w-auto md:w-sm py-2 text-justify">
                       {/* Jenos is a mobile application for engineers to record attendance and input daily work activities. The data is sent to monitoring staff, who can view progress and performance through interactive job graphs, making it easier to track and analyze field operations.  */}
                       A mobile app for browsing movies, viewing details, and watching trailers using TMDb API.
                     </p>
@@ -400,12 +402,13 @@ function Content() {
                     </div>
                   </div>
                   {/* result image */}
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-center pt-6 md:pt-0">
                     <Stack
                       randomRotation={true}
                       sensitivity={180}
                       sendToBackOnClick={false}
                       cardsData={images3}
+                      cardDimensions={isDesktop ? { width: 300, height: 300 } : { width: 200, height: 300 }}
                     />
                   </div>
                 </div>
@@ -414,10 +417,10 @@ function Content() {
                 <div className="container flex flex-col md:flex-row">
                   <div className="">
                     <div>
-                      <h2 className="text-4xl md:text-5xl font-bold">Smart Ring Apps</h2>
+                      <h2 className="text-3xl md:text-5xl font-bold">Smart Ring Apps</h2>
                       {/* <img src="" alt="" /> */}
                     </div>
-                    <p className="w-sm py-2 text-justify">
+                    <p className="w-auto md:w-sm py-2 text-justify">
                       {/* Jenos is a mobile application for engineers to record attendance and input daily work activities. The data is sent to monitoring staff, who can view progress and performance through interactive job graphs, making it easier to track and analyze field operations.  */}
                       A mobile application designed to connect with a smart ring device, displaying real-time heart rate sensor data in interactive graphics. The app will also include additional health and activity tracking features to enhance user wellness insights. Currently under active development.
                     </p>
@@ -450,12 +453,13 @@ function Content() {
                     </div>
                   </div>
                   {/* result image */}
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-center pt-6 md:pt-0">
                     <Stack
                       randomRotation={true}
                       sensitivity={180}
                       sendToBackOnClick={false}
                       cardsData={images5}
+                      cardDimensions={isDesktop ? { width: 300, height: 300 } : { width: 200, height: 300 }}
                     />
                   </div>
                 </div>
@@ -471,7 +475,7 @@ function Content() {
                       sensitivity={180}
                       sendToBackOnClick={false}
                       cardsData={images4}
-                      cardDimensions={ isDesktop ? { width: 800, height: 350 } : { width: 400, height: 150 } }
+                      cardDimensions={ isDesktop ? { width: 800, height: 350 } : { width: 270, height: 200 } }
                     />
                   </div>
                   <div className="flex-auto md:pl-20">
@@ -537,19 +541,19 @@ function Content() {
                       sensitivity={180}
                       sendToBackOnClick={false}
                       cardsData={images6}
-                      cardDimensions={isDesktop ? { width: 800, height: 350 } : { width: 400, height: 150 } }
+                      cardDimensions={isDesktop ? { width: 800, height: 350 } : { width: 270, height: 200 } }
                     />
                   </div>
                   <div className="flex-auto md:pl-20">
                     <div className="flex">
-                      <h2 className="text-5xl font-bold ">Company Profile</h2>
+                      <h2 className="text-3xl md:text-5xl font-bold ">Company Profile</h2>
                       {/* <img src="" alt="" /> */}
                     </div>
                     <p className="md:w-xl py-2 text-justify">
                       {/* Turelth is a mobile application designed to track daily sensor data input and cleanliness updates from field operators. The data is sent directly to monitoring staff on the server, enabling them to verify input completion sensor, observe cleanliness progress, and detect any missed submissions in real time.  */}
                       A web-based company profile content management system for PT. Hydant Inovasi Semesta. Contributed to the development of dynamic content modules, service management, gallery, client, and responsive mobile-friendly UI/UX design, enabling easy updates through an admin CMS panel.
                     </p>
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="grid grid-cols-2 gap-2">
                       <div className="inline-flex items-center gap-2 bg-gradient-to-r from-gray-500/10 via-gray-400/10 to-gray-500/10 hover:from-gray-600 hover:via-gray-500 hover:to-gray-600 py-2 px-4 rounded-lg text-white transition-all duration-300 transform hover:scale-105 font-bold">
                         <FaHtml5 />
                         HTML
@@ -574,12 +578,12 @@ function Content() {
                         <SiPostgresql />
                         Postgres
                       </div>
-                      <a href="https://hyd-ant.id" target="_blank" className="col-span-3 inline-flex justify-between items-center gap-2 bg-gradient-to-r from-orange-500/10 via-orange-400/10 to-orange-500/10 hover:from-orange-600 hover:via-orange-500 hover:to-orange-600 py-2 px-4 rounded-lg text-white transition-all duration-300 transform hover:scale-105 font-bold">
+                      <a href="https://hyd-ant.id" target="_blank" className="col-span-2 inline-flex justify-between items-center gap-2 bg-gradient-to-r from-orange-500/10 via-orange-400/10 to-orange-500/10 hover:from-orange-600 hover:via-orange-500 hover:to-orange-600 py-2 px-4 rounded-lg text-white transition-all duration-300 transform hover:scale-105 font-bold">
                           <IoIosLink />
                           Check the websites
                           <BiSolidRightArrowAlt />
                       </a>
-                      <div className="col-span-3 flex-row text-md italic font-medium">
+                      <div className="col-span-2 flex-row text-md italic font-medium">
                         Finished on <span className="not-italic font-semibold">(Jun 2025)</span>
                       </div>
                     </div>
@@ -734,6 +738,14 @@ function Content() {
             className="hover:text-pink-400 transition"
           >
             <FaInstagram />
+          </a>
+          <a
+            href="https://www.figma.com/files/team/1346390575943254406/resources/community/@naze"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-blue-400 transition"
+          >
+            <FaFigma />
           </a>
         </div>
 
