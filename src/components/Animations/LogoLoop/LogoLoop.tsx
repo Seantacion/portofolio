@@ -295,6 +295,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     const renderLogoItem = useCallback(
       (item: LogoItem, key: React.Key) => {
         const isNodeItem = "node" in item;
+        const isHidden = Boolean((item as any).href && !(item as any).ariaLabel);
 
         const content = isNodeItem ? (
           <span
@@ -304,7 +305,6 @@ export const LogoLoop = React.memo<LogoLoopProps>(
               scaleOnHover &&
                 "transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120"
             )}
-            aria-hidden={!!(item as any).href && !(item as any).ariaLabel}
           >
             {(item as any).node}
           </span>
@@ -377,7 +377,6 @@ export const LogoLoop = React.memo<LogoLoopProps>(
             className="flex items-center"
             key={`copy-${copyIndex}`}
             role="list"
-            aria-hidden={copyIndex > 0}
             ref={copyIndex === 0 ? seqRef : undefined}
           >
             {logos.map((item, itemIndex) =>

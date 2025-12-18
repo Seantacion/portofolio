@@ -80,10 +80,14 @@ export const PROJECTS: Project[] = [
       { icon: FaFlutter, label: "Flutter" },
       { icon: FaDartLang, label: "Dart" },
       { icon: FaYoutube, label: "Youtube Player" },
-      { icon: MdDashboardCustomize, label: "Custom UI" },
-      { icon: SiThemoviedatabase, label: "TMDb API Integration" },
+      { icon: MdDashboardCustomize, label: "Custom UI" }
     ],
     status: { type: "completed", date: "Mar 2025" },
+    link: {
+      icon: SiThemoviedatabase,
+      label: "TMDb API Integration",
+      url: "https://developer.themoviedb.org/docs/getting-started",
+    },
   },
   {
     id: "smart-ring",
@@ -105,7 +109,7 @@ export const PROJECTS: Project[] = [
     title: "SISAPPRA",
     description:
       "A web-based information system for Satpol PP DKI Jakarta. Contributed to the personnel module with employee data management, maps, field officer login UI, reporting, data management, and master data modules, including responsive mobile design.",
-    layout: "web",
+    layout: "mobile",
     images: SISAPPRA_IMAGES,
     technologies: [
       { icon: FaReact, label: "React" },
@@ -129,7 +133,7 @@ export const PROJECTS: Project[] = [
     title: "Company Profile",
     description:
       "A web-based company profile content management system for PT. Hydant Inovasi Semesta. Contributed to the development of dynamic content modules, service management, gallery, client, and responsive mobile-friendly UI/UX design, enabling easy updates through an admin CMS panel.",
-    layout: "web",
+    layout: "mobile",
     images: COMPANY_PROFILE_IMAGES,
     technologies: [
       { icon: FaHtml5, label: "HTML" },

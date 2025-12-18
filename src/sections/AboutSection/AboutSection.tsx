@@ -8,7 +8,7 @@ import TextType from "@/components/Animations/TextAnimations/TextType/TextType";
 
 export default function AboutPage() {
     const handleOpenPdf = () => {
-        window.open("/Portfolio.pdf", "_blank");
+        window.open("/Resume.pdf", "_blank");
     };
 
   return (

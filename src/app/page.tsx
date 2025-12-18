@@ -60,24 +60,24 @@ function Content() {
   const isDesktop = useMediaQuery({ minWidth: 768 });
 
   // const { data: profiles }: any = await getProfiles();
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch(
-        `https://ptnfzunarioxzuzspnpm.supabase.co/functions/v1/tech-join`,
-        // {
-        //   headers: {
-        //     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB0bmZ6dW5hcmlveHp1enNwbnBtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYzMDg1MTQsImV4cCI6MjA3MTg4NDUxNH0.QtFLcchyKDXMkE2TFBBvWTlBsvS3GjHPw0GOI-E4_Z8",
-        //     Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB0bmZ6dW5hcmlveHp1enNwbnBtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYzMDg1MTQsImV4cCI6MjA3MTg4NDUxNH0.QtFLcchyKDXMkE2TFBBvWTlBsvS3GjHPw0GOI-E4_Z8"}`,
-        //   },
-        // }
-      );
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const res = await fetch(
+  //       `https://ptnfzunarioxzuzspnpm.supabase.co/functions/v1/tech-join`,
+  //       // {
+  //       //   headers: {
+  //       //     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB0bmZ6dW5hcmlveHp1enNwbnBtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYzMDg1MTQsImV4cCI6MjA3MTg4NDUxNH0.QtFLcchyKDXMkE2TFBBvWTlBsvS3GjHPw0GOI-E4_Z8",
+  //       //     Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB0bmZ6dW5hcmlveHp1enNwbnBtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTYzMDg1MTQsImV4cCI6MjA3MTg4NDUxNH0.QtFLcchyKDXMkE2TFBBvWTlBsvS3GjHPw0GOI-E4_Z8"}`,
+  //       //   },
+  //       // }
+  //     );
 
-      const data = await res.json();
-      console.log(data);
-      console.log()
-    };
-    fetchData();
-  }, []);
+  //     const data = await res.json();
+  //     console.log(data);
+  //     console.log()
+  //   };
+  //   fetchData();
+  // }, []);
 
 
   const items = [
