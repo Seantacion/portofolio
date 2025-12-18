@@ -19,7 +19,7 @@ export default function HeroPage() {
       {/* Content */}
       <div className="justify-end pt-[200px] lg:pt-0 lg:justify-between relative container flex flex-col items-center flex-col-reverse lg:flex-row w-full mx-auto">
         {/* Introductions */}
-        <div className="relative z-1 flex flex-col items-center lg:items-start justify-center">
+        <div className="relative z-1 flex flex-col items-center lg:items-start justify-center lg:pl-8">
           <SplitText
             text="Hallo👋🏽"
             className="text-2xl py-1 text-white text-center lg:text-4xl"
@@ -27,18 +27,18 @@ export default function HeroPage() {
           <div>
             <SplitText
               text="I'm "
-              className="text-3xl lg:text-7xl font-bold text-white text-center"
+              className="text-3xl lg:text-5xl xl:text-7xl font-bold text-white text-center"
             />
             <span> </span>
             <SplitText
               text="Sena Ramadhan"
-              className="text-3xl lg:text-7xl mx-2 font-bold text-orange-400 text-center"
+              className="text-3xl lg:text-5xl xl:text-7xl mx-2 font-bold text-orange-400 text-center"
             />
           </div>
           <div className="flex flex-row gap-4">
             <SplitText
               text="a "
-              className="text-3xl lg:text-7xl font-bold text-white text-center"
+              className="text-3xl lg:text-5xl xl:text-7xl font-bold text-white text-center"
             />
             <FadeContent
               blur={true}
@@ -48,7 +48,7 @@ export default function HeroPage() {
             >
               <RotatingText
                 texts={["Frontend Developer", "Mobile Developer"]}
-                mainClassName="text-3xl lg:text-7xl font-bold text-white text-center"
+                mainClassName="text-3xl lg:text-5xl xl:text-7xl font-bold text-white text-center"
                 staggerFrom={"last"}
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
@@ -63,7 +63,7 @@ export default function HeroPage() {
           <div className="max-w-2xl mx-3 lg:mx-0 ">
             <SplitText
               text="dedicated to building intuitive interfaces & eager to learn new technologies for growth."
-              className="text-base lg:text-3xl py-2 text-white/90 font-light text-center lg:text-start"
+              className="text-base lg:text-2xl xl:text-3xl py-2 text-white/90 font-light text-center lg:text-start"
               delay={20}
             />
           </div>
