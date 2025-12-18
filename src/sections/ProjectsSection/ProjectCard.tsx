@@ -75,16 +75,15 @@ export default function ProjectCard({ project, isDesktop }: ProjectCardProps) {
 
   // Uniform layout for all projects
   const isWeb = layout === "web";
-  const containerClass = isWeb ? "flex-col lg:flex-row flex-col-reverse" : "flex-col lg:flex-row";
   const gridCols = isWeb ? "grid-cols-2" : "grid-cols-4";
   const techColSpan = isWeb ? "" : "col-span-2";
 
   return (
-    <SpotlightCard className="mx-5 lg:mx-0" spotlightColor="rgba(255, 174, 0, 0.2)">
-      <div className="container grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+    <SpotlightCard className="mx-5 xl:mx-0" spotlightColor="rgba(255, 174, 0, 0.2)">
+      <div className="container grid grid-cols-1 xl:grid-cols-12 gap-6 items-center">
         {/* Image Section */}
         <div
-          className="lg:col-span-3 order-1 lg:order-2 flex justify-center cursor-pointer"
+          className="xl:col-span-3 order-1 xl:order-2 flex justify-center cursor-pointer"
           onClick={() => openLightbox(0)}
         >
           <Stack
@@ -101,12 +100,12 @@ export default function ProjectCard({ project, isDesktop }: ProjectCardProps) {
         </div>
 
         {/* Content Section */}
-        <div className="lg:col-span-7 order-2 lg:order-1">
-          <h2 className="text-4xl lg:text-5xl font-bold">
+        <div className="xl:col-span-7 order-2 xl:order-1">
+          <h2 className="text-4xl xl:text-5xl font-bold">
             {title}
           </h2>
 
-          <p className="py-2 max-w-md">
+          <p className="py-2 max-w">
             {description}
           </p>
 

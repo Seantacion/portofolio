@@ -24,7 +24,7 @@ export default function ProjectsSection({ isDesktop }: ProjectsSectionProps) {
 
         <FadeAnimation>
           {/* Mobile Projects Grid */}
-          <div className="grid grid-cols gap-4 lg:grid-cols-2 px-4">
+          <div className="grid grid-cols gap-4 xl:grid-cols-2 px-4">
             {PROJECTS.map((project) => (
               <ProjectCard
                 key={project.id}
