@@ -1,31 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring } from "motion/react";
-import dynamic from "next/dynamic";
 import Dock from "../components/Shared/Dock/Dock";
 import { VscAccount, VscArchive, VscHome } from "react-icons/vsc";
 import FadeContent from "../components/Animations/FadeContent/FadeContent";
-import SpotlightCard from "../components/Shared/SpotlightCard/SpotlightCard";
-import RotatingText from "../components/Animations/TextAnimations/RotatingText/RotatingText";
-// import { Badge } from "lucide-react";
-// import { Badge, Button } from "@material-tailwind/react";
-import Stack from "../components/Shared/Stack/Stack";
-import { FaCss3, FaDartLang, FaFigma, FaFlutter, FaHtml5, FaInstagram, FaLaravel, FaLinkedin, FaWhatsapp, FaYoutube } from "react-icons/fa6";
-import { SiAlwaysdata, SiAxios, SiBootstrap, SiCodeigniter, SiCss3, SiDart, SiFlutter, SiGithub, SiGitlab, SiHtml5, SiJavascript, SiLaravel, SiLeaflet, SiMantine, SiNextdotjs, SiNodedotjs, SiPostgresql, SiReact, SiRedux, SiTailwindcss, SiThemoviedatabase, SiTypescript } from "react-icons/si";
-import { TbCloudDataConnection } from "react-icons/tb";
-import { BiLogoAndroid, BiLogoPlayStore, BiLogoPostgresql, BiLogoTypescript, BiLogoVisualStudio, BiSolidRightArrowAlt } from "react-icons/bi";
-import { MdDashboardCustomize, MdWorkOutline } from "react-icons/md";
-import { FaBluetooth, FaMapMarkerAlt, FaReact } from "react-icons/fa";
-import { RiFileExcel2Fill, RiNextjsFill } from "react-icons/ri";
-import { IoIosLink } from "react-icons/io";
-import FadeAnimation from "../components/Custom/FadeAnimation/FadeAnimation";
-import LogoLoop from "../components/Animations/LogoLoop/LogoLoop";
-import { useMediaQuery } from "react-responsive";
-import supabase from "../integrations/client";
-import getProfiles from "../services/fetchdata";
-import TextCursor from "../components/Animations/TextAnimations/TextCursor/TextCursor";
-import DecryptedText from "../components/Animations/TextAnimations/DecryptedText/DecryptedText";
+import { MdWorkOutline } from "react-icons/md";
 import { 
   HeroSection, 
   AboutSection, 
@@ -33,11 +12,6 @@ import {
   ExperienceSection, 
   FooterSection
 } from '@/sections';
-
-// import GlassSurface from "./components/Components/GlassSurface/GlassSurface";
-const GlassSurface = dynamic(() => import('../components/Shared/GlassSurface/GlassSurface'), { ssr: false });
-
-const StackNoSSR = dynamic(() => import("../components/Shared/Stack/Stack"), { ssr: false });
 
 export default function Home() {
   return (

@@ -7,6 +7,9 @@ import { inter } from "./fonts";
 export const metadata: Metadata = {
   title: "Sena Ramadhan Portfolio",
   description: "Portfolio of Sena Ramadhan, a Frontend Developer",
+  icons: {
+    icon: "/favicon.ico", 
+  },
 };
 
 export default function RootLayout({
