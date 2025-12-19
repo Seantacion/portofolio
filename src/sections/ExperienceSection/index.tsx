@@ -11,7 +11,7 @@ interface ExperienceSectionProps {
 
 export default function ExperienceSection({ isDesktop }: ExperienceSectionProps) {
   return (
-    <div className="flex flex-col w-full h-screen" id="experience">
+    <div className="flex flex-col w-full h-screen bg-black text-white" id="experience">
       <div className="container mx-auto">
         {/* Title */}
         <div className="flex items-center gap-3 text-lg text-center text-medium p-4">

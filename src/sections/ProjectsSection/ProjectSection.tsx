@@ -14,7 +14,7 @@ export default function ProjectsSection({ isDesktop }: ProjectsSectionProps) {
   const webProjects = PROJECTS.filter((project) => project.layout === "web");
 
   return (
-    <div className="flex w-full" id="projects">
+    <div className="flex w-full bg-black text-white" id="projects">
       <div className="container mx-auto">
         {/* Title */}
         <div className="flex items-center gap-3 text-lg text-center text-medium p-4">

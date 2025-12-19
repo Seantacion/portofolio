@@ -67,7 +67,7 @@ function Content() {
   return (
     <>
       {/* Navbar */}
-      <div className="fixed bottom-10 left-0 z-50 w-full">
+      <div className="fixed text-white bottom-10 left-0 z-50 w-full">
         <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
           <Dock 
             items={items}
