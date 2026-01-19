@@ -17,7 +17,7 @@ export default function HeroPage() {
       </div>
 
       {/* Content */}
-      <div className="justify-end pt-[200px] lg:pt-0 lg:justify-between relative container flex flex-col items-center flex-col-reverse lg:flex-row w-full mx-auto">
+      <div className="justify-end pt-[100px] lg:pt-0 lg:justify-between relative container flex flex-col items-center flex-col-reverse lg:flex-row w-full mx-auto">
         {/* Introductions */}
         <div className="relative z-1 flex flex-col items-center lg:items-start justify-center lg:pl-8">
           <SplitText
