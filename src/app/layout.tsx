@@ -3,6 +3,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { inter } from "./fonts";
+import SmoothScrollProvider from "@/components/Custom/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "Sena Ramadhan Portfolio",
@@ -22,9 +23,11 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased`}
       >
-        {children}
-        <Analytics />
-        <SpeedInsights />
+        <SmoothScrollProvider>
+          {children}
+          <Analytics />
+          <SpeedInsights />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

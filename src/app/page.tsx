@@ -12,6 +12,8 @@ import {
   ExperienceSection, 
   FooterSection
 } from '@/sections';
+import { useLenis } from "@/hooks/useLenis";
+const { scrollTo } = useLenis();
 
 export default function Home() {
   return (
@@ -32,11 +34,27 @@ function Content() {
   })
 
   const items = [
-    { icon: <VscHome size={18} />, label: 'Home', onClick: () => window.scrollTo({ top: 0, behavior: 'smooth' }) },
-    { icon: <VscAccount size={18} />, label: 'About', onClick: () => window.scrollTo({ top: document.getElementById("about")?.offsetTop || 0, behavior: 'smooth' }) },
-    { icon: <VscArchive size={18} />, label: 'Projects', onClick: () => window.scrollTo({ top: document.getElementById("projects")?.offsetTop || 0, behavior: 'smooth' }) },
-    { icon: <MdWorkOutline size={18} />, label: 'Experience', onClick: () => window.scrollTo({ top: document.getElementById("experience")?.offsetTop || 0, behavior: 'smooth' }) },
-  ];
+  { 
+    icon: <VscHome size={18} />, 
+    label: 'Home', 
+    onClick: () => scrollTo(0) 
+  },
+  { 
+    icon: <VscAccount size={18} />, 
+    label: 'About', 
+    onClick: () => scrollTo('#about') 
+  },
+  { 
+    icon: <VscArchive size={18} />, 
+    label: 'Projects', 
+    onClick: () => scrollTo('#projects') 
+  },
+  { 
+    icon: <MdWorkOutline size={18} />, 
+    label: 'Experience', 
+    onClick: () => scrollTo('#experience') 
+  },
+];
   
   return (
     <>

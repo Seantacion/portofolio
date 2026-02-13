@@ -36,7 +36,7 @@ export default function AboutPage() {
           baseRotation={5}
           blurStrength={10}
           containerClassName="px-10 py-10 md:px-20 md:py-20"
-          textClassName="text-lg text-center md:text-start md:text-5xl/15 font-extralight text-white"
+          textClassName="text-lg text-center font-extralight md:text-start md:text-5xl/15 text-white"
         >
           For me, development is a continuous journey of learning by doing. 
           I thrive on solving problems, experimenting with ideas, and 
