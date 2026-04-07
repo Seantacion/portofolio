@@ -28,11 +28,18 @@ export const MOVIE_IMAGES: ProjectImage[] = [
 ];
 
 export const SMART_RING_IMAGES: ProjectImage[] = [
-  { id: 1, img: "/images/projects/smartring/5-rings.png" },
-  { id: 2, img: "/images/projects/smartring/4-rings.png" },
-  { id: 3, img: "/images/projects/smartring/3-rings.png" },
-  { id: 4, img: "/images/projects/smartring/2-rings.png" },
-  { id: 5, img: "/images/projects/smartring/1-rings.png" },
+  { id: 1, img: "/images/projects/smartring/12-rings.png" },
+  { id: 2, img: "/images/projects/smartring/11-rings.png" },
+  { id: 3, img: "/images/projects/smartring/10-rings.png" },
+  { id: 4, img: "/images/projects/smartring/9-rings.png" },
+  { id: 5, img: "/images/projects/smartring/8-rings.png" },
+  { id: 6, img: "/images/projects/smartring/7-rings.png" },
+  { id: 7, img: "/images/projects/smartring/6-rings.png" },
+  { id: 8, img: "/images/projects/smartring/5-rings.png" },
+  { id: 9, img: "/images/projects/smartring/4-rings.png" },
+  { id: 10, img: "/images/projects/smartring/3-rings.png" },
+  { id: 11, img: "/images/projects/smartring/2-rings.png" },
+  { id: 12, img: "/images/projects/smartring/1-rings.png" },
 ];
 
 export const SISAPPRA_IMAGES: ProjectImage[] = [
@@ -70,4 +77,18 @@ export const COMPANY_PROFILE_IMAGES: ProjectImage[] = [
   { id: 11, img: "/images/projects/compro/3-compro.png" },
   { id: 12, img: "/images/projects/compro/2-compro.png" },
   { id: 13, img: "/images/projects/compro/1-compro.png" },
+];
+
+export const NATHING_IMAGES: ProjectImage[] = [
+  { id: 1, img: "/images/projects/nathing/11-nathing.png" },
+  { id: 2, img: "/images/projects/nathing/10-nathing.png" },
+  { id: 3, img: "/images/projects/nathing/9-nathing.png" },
+  { id: 4, img: "/images/projects/nathing/8-nathing.png" },
+  { id: 5, img: "/images/projects/nathing/7-nathing.png" },
+  { id: 6, img: "/images/projects/nathing/6-nathing.png" },
+  { id: 7, img: "/images/projects/nathing/5-nathing.png" },
+  { id: 8, img: "/images/projects/nathing/4-nathing.png" },
+  { id: 9, img: "/images/projects/nathing/3-nathing.png" },
+  { id: 10, img: "/images/projects/nathing/2-nathing.png" },
+  { id: 11, img: "/images/projects/nathing/1-nathing.png" },
 ];

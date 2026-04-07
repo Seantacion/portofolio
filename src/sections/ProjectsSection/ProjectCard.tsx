@@ -13,8 +13,9 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, isDesktop }: ProjectCardProps) {
-  const { title, description, images, technologies, status, link, layout } = project;
-  
+  const { title, description, images, technologies, status, link, layout } =
+    project;
+
   // Lightbox state
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -43,25 +44,29 @@ export default function ProjectCard({ project, isDesktop }: ProjectCardProps) {
       case "released":
         return (
           <div className="col-span-4 flex-row text-md italic font-medium">
-            Released On <span className="not-italic font-semibold">({status.date})</span>
+            Released On{" "}
+            <span className="not-italic font-semibold">({status.date})</span>
           </div>
         );
       case "completed":
         return (
           <div className="col-span-4 flex-row text-md italic font-medium">
-            Completed on <span className="not-italic font-semibold">({status.date})</span>
+            Completed on{" "}
+            <span className="not-italic font-semibold">({status.date})</span>
           </div>
         );
       case "contributed":
         return (
           <div className="col-span-4 flex-row text-md italic font-medium">
-            Contributed until <span className="not-italic font-semibold">({status.date})</span>
+            Contributed until{" "}
+            <span className="not-italic font-semibold">({status.date})</span>
           </div>
         );
       case "finished":
         return (
           <div className="col-span-4 flex-row text-md italic font-medium">
-            Finished on <span className="not-italic font-semibold">({status.date})</span>
+            Finished on{" "}
+            <span className="not-italic font-semibold">({status.date})</span>
           </div>
         );
       case "in-progress":
@@ -79,11 +84,14 @@ export default function ProjectCard({ project, isDesktop }: ProjectCardProps) {
   const techColSpan = isWeb ? "" : "col-span-2";
 
   return (
-    <SpotlightCard className="mx-5 xl:mx-0" spotlightColor="rgba(255, 174, 0, 0.2)">
+    <SpotlightCard
+      className="mx-5 xl:mx-0"
+      spotlightColor="rgba(255, 174, 0, 0.2)"
+    >
       <div className="container grid grid-cols-1 xl:grid-cols-12 gap-6 items-center">
         {/* Image Section */}
         <div
-          className="xl:col-span-3 order-1 xl:order-2 flex justify-center cursor-pointer"
+          className="xl:col-span-3 order-1 xl:order-2 flex justify-center cursor-pointer "
           onClick={() => openLightbox(0)}
         >
           <Stack
@@ -101,13 +109,9 @@ export default function ProjectCard({ project, isDesktop }: ProjectCardProps) {
 
         {/* Content Section */}
         <div className="xl:col-span-7 order-2 xl:order-1">
-          <h2 className="text-4xl xl:text-5xl font-bold">
-            {title}
-          </h2>
+          <h2 className="text-4xl xl:text-5xl font-bold">{title}</h2>
 
-          <p className="py-2 max-w">
-            {description}
-          </p>
+          <p className="py-2 max-w">{description}</p>
 
           {/* Technologies */}
           <div className={`grid ${gridCols} gap-2`}>
@@ -141,7 +145,6 @@ export default function ProjectCard({ project, isDesktop }: ProjectCardProps) {
           </div>
         </div>
       </div>
-
 
       {/* Lightbox */}
       <ImageLightbox

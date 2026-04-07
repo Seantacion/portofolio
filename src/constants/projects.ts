@@ -19,15 +19,31 @@ import {
   SiJavascript,
   SiBootstrap,
   SiPostgresql,
+  SiWireshark,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiPrisma,
+  SiRedis,
+  SiGooglegemini,
+  SiVercel,
 } from "react-icons/si";
 import type { Project } from "@/types/project.types";
-import { COMPANY_PROFILE_IMAGES, JENOS_IMAGES, MOVIE_IMAGES, SISAPPRA_IMAGES, SMART_RING_IMAGES, TURELTH_IMAGES } from "./project.images";
+import {
+  COMPANY_PROFILE_IMAGES,
+  JENOS_IMAGES,
+  MOVIE_IMAGES,
+  NATHING_IMAGES,
+  SISAPPRA_IMAGES,
+  SMART_RING_IMAGES,
+  TURELTH_IMAGES,
+} from "./project.images";
 import { FaDartLang, FaFlutter } from "react-icons/fa6";
 import { BiLogoPlayStore, BiLogoTypescript } from "react-icons/bi";
 import { TbCloudDataConnection } from "react-icons/tb";
 import { MdDashboardCustomize } from "react-icons/md";
 import { IoIosLink } from "react-icons/io";
-import { RiNextjsFill, RiFileExcel2Fill } from "react-icons/ri";
+import { RiNextjsFill, RiFileExcel2Fill, RiFirebaseLine } from "react-icons/ri";
 export const PROJECTS: Project[] = [
   {
     id: "turelth",
@@ -69,26 +85,26 @@ export const PROJECTS: Project[] = [
       url: "https://play.google.com/store/apps/details?id=com.jenos&hl=id",
     },
   },
-  {
-    id: "movie-app",
-    title: "Movie Apps",
-    description:
-      "A mobile app for browsing movies, viewing details, and watching trailers using TMDb API.",
-    layout: "mobile",
-    images: MOVIE_IMAGES,
-    technologies: [
-      { icon: FaFlutter, label: "Flutter" },
-      { icon: FaDartLang, label: "Dart" },
-      { icon: FaYoutube, label: "Youtube Player" },
-      { icon: MdDashboardCustomize, label: "Custom UI" }
-    ],
-    status: { type: "completed", date: "Mar 2025" },
-    link: {
-      icon: SiThemoviedatabase,
-      label: "TMDb API Integration",
-      url: "https://developer.themoviedb.org/docs/getting-started",
-    },
-  },
+  // {
+  //   id: "movie-app",
+  //   title: "Movie Apps",
+  //   description:
+  //     "A mobile app for browsing movies, viewing details, and watching trailers using TMDb API.",
+  //   layout: "mobile",
+  //   images: MOVIE_IMAGES,
+  //   technologies: [
+  //     { icon: FaFlutter, label: "Flutter" },
+  //     { icon: FaDartLang, label: "Dart" },
+  //     { icon: FaYoutube, label: "Youtube Player" },
+  //     { icon: MdDashboardCustomize, label: "Custom UI" },
+  //   ],
+  //   status: { type: "completed", date: "Mar 2025" },
+  //   link: {
+  //     icon: SiThemoviedatabase,
+  //     label: "TMDb API Integration",
+  //     url: "https://developer.themoviedb.org/docs/getting-started",
+  //   },
+  // },
   {
     id: "smart-ring",
     title: "Smart Ring Apps",
@@ -100,9 +116,11 @@ export const PROJECTS: Project[] = [
       { icon: FaFlutter, label: "Flutter" },
       { icon: FaDartLang, label: "Dart" },
       { icon: FaBluetooth, label: "Bluetooth" },
+      { icon: SiWireshark, label: "Wireshark" },
+      { icon: RiFirebaseLine, label: "Firebase" },
       { icon: MdDashboardCustomize, label: "Custom UI" },
     ],
-    status: { type: "in-progress" },
+    status: { type: "completed", date: "Jan 2026" },
   },
   {
     id: "sisappra",
@@ -148,6 +166,30 @@ export const PROJECTS: Project[] = [
       icon: IoIosLink,
       label: "Check the websites",
       url: "https://hyd-ant.id",
+    },
+  },
+  {
+    id: "nathing",
+    title: "Nathing",
+    description:
+      "A personal productivity platform built for myself, free for everyone. Features include a Pomodoro timer with task management, Fluent English teleprompter with AI-generated scripts, and a Habit Tracker with streak tracking, statistics, and a clean minimal UI.",
+    layout: "mobile",
+    images: NATHING_IMAGES,
+    technologies: [
+      { icon: SiNextdotjs, label: "Next.js" },
+      { icon: SiTypescript, label: "TypeScript" },
+      { icon: SiTailwindcss, label: "Tailwind CSS" },
+      { icon: SiPrisma, label: "Prisma" },
+      { icon: SiPostgresql, label: "PostgreSQL" },
+      { icon: SiRedis, label: "Redis" },
+      { icon: SiGooglegemini, label: "Gemini AI" },
+      { icon: SiVercel, label: "Vercel" },
+    ],
+    status: { type: "finished", date: "Apr 2026" },
+    link: {
+      icon: IoIosLink,
+      label: "Visit Nathing",
+      url: "https://nathing.vercel.app", // ganti kalau domain beda
     },
   },
 ];
