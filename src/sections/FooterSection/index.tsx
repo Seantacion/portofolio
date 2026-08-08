@@ -4,7 +4,7 @@ import { SOCIAL_LINKS } from "@/constants/social";
 
 export default function FooterSection() {
   return (
-    <footer className="w-full pt-20 md:pt-10 pb-40 bg-black text-white flex flex-col items-center gap-6">
+    <footer className="w-full pt-20 md:pt-60 pb-40 bg-black text-white flex flex-col items-center gap-6">
       {/* CTA */}
       <h2 className="text-lg text-center font-light">Let's Connect!</h2>
 

@@ -4,6 +4,15 @@ import type { Experience } from "@/types/experience.types";
 
 export const EXPERIENCES: Experience[] = [
   {
+    company: "PT Khatulistiwa Nusantara Indonesia",
+    roles: ["UI/UX Designer"],
+    period: "May 2026 - Present",
+    isRotating: true,
+    // highlights: [
+    //   "Redesign ERP Project for PT Khatulistiwa Nusantara Indonesia",
+    // ],
+  },
+  {
     company: "Freelance",
     roles: ["Web Developer", "UI/UX Design"],
     period: "Jul 2023 - Present",

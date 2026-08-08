@@ -47,7 +47,7 @@ export default function HeroPage() {
               initialOpacity={0}
             >
               <RotatingText
-                texts={["Frontend Developer", "Mobile Developer"]}
+                texts={["Frontend Developer", "Mobile Developer", "UI/UX Designer"]}
                 mainClassName="text-3xl lg:text-5xl xl:text-7xl font-bold text-white text-center"
                 staggerFrom={"last"}
                 initial={{ y: "100%" }}

@@ -61,7 +61,7 @@ export default function AboutPage() {
 
             <div className="flex flex-row md:flex-col py-5 md:pt-50 gap-5">
               <div className="flex flex-col items-center md:items-start">
-                <h1 className="text-5xl font-bold text-orange-400">2+</h1>
+                <h1 className="text-5xl font-bold text-orange-400">3+</h1>
                 <h5 className="text-white">Years of Experience</h5>
               </div>
               <div className="flex flex-col items-center md:items-start">
@@ -74,13 +74,19 @@ export default function AboutPage() {
           {/* Right Side */}
           <div className="flex-1">
             <ShinyText
-              text="I'm a frontend developer who loves turning ideas into real digital experiences. On the web, I enjoy building interfaces that are clean, responsive, and easy to use, while on mobile I use Flutter to create apps that feel smooth and work seamlessly across devices."
+              text="I’m a UI/UX Designer with a strong background in Frontend and Mobile Development. My experience in React, Next.js, and Flutter allows me to bridge the gap between design and implementation, creating digital products that are not only visually engaging but also practical to build and use."
               disabled={false}
               speed={3}
               className="pb-5 text-center md:text-start text-sm md:text-base text-white"
             />
             <ShinyText
-              text="I believe the best way to grow is by learning through doing—solving problems, experimenting with new ideas, and constantly improving with every project. For me, coding isn’t just about writing functions, it’s about creating something meaningful that people can actually enjoy and benefit from."
+              text="Currently, I focus on developing my design expertise through user experience, information architecture, and interaction design. Understanding how people think, navigate, and interact with products helps me create solutions that are both meaningful and intuitive."
+              disabled={false}
+              speed={3}
+              className="pb-5 text-center md:text-start text-sm md:text-base text-white"
+            />
+            <ShinyText
+              text="My long-term goal is to grow as a Frontend Creative Developer, combining design thinking with technical execution to craft interactive experiences that are functional, expressive, and memorable. I believe the best products emerge when creativity, usability, and technology work together."
               disabled={false}
               speed={3}
               className="pb-5 text-center md:text-start text-sm md:text-base text-white"
