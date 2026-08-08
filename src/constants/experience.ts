@@ -25,7 +25,7 @@ export const EXPERIENCES: Experience[] = [
   {
     company: "PT Hydant Inovasi Semesta",
     roles: ["Frontend Developer", "Flutter Developer"],
-    period: "Oct 2023 - Present",
+    period: "Oct 2023 - Jan 2026",
     isRotating: true,
     // highlights: [
     //   "Build application Jenos",
